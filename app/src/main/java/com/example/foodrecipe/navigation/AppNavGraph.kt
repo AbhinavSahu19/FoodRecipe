@@ -53,7 +53,8 @@ fun AppNavGraph(
             arguments = listOf(navArgument(IngredientSearchResultDestination.args){type = NavType.StringType})
             ){
             IngredientSearchResultScreen(
-                navigateToDetails = {navController.navigate("${RecipeDetailsDestination.route}/$it")}
+                navigateToDetails = {navController.navigate("${RecipeDetailsDestination.route}/$it")},
+                navigateToHome = {navController.navigate(HomeDestination.route)}
             )
         }
         composable(RecipeDetailsDestination.routeWithArgs,

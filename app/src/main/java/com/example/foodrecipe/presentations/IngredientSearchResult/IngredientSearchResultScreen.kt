@@ -1,5 +1,6 @@
 package com.example.foodrecipe.presentations.IngredientSearchResult
 
+import androidx.activity.compose.BackHandler
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
@@ -51,8 +52,12 @@ import com.example.foodrecipe.utils.ResponseModel
 @Composable
 fun IngredientSearchResultScreen(
     ingredientSearchResultViewModel: IngredientSearchResultViewModel = hiltViewModel(),
-    navigateToDetails: (Int)-> Unit
+    navigateToDetails: (Int)-> Unit,
+    navigateToHome: ()->Unit
 ){
+    BackHandler {
+        navigateToHome()
+    }
     val searchResponse by ingredientSearchResultViewModel.searchResult.collectAsState()
     val ingList by remember {
         mutableStateOf(ingredientSearchResultViewModel.ingList.split(",+"))
