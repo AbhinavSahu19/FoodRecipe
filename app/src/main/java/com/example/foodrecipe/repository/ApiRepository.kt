@@ -15,7 +15,7 @@ interface ApiRepository {
 
     fun getRecipeByIngredient(ingredients: String, number: Int, ranking: Int): Flow<ResponseModel<List<RecipeListItemByIngredient>>>
 
-    fun getRecipeByQuery(query: String): Flow<ResponseModel<RecipeResponseByQuery>>
+    fun getRecipeByQuery(query: String, number: Int): Flow<ResponseModel<RecipeResponseByQuery>>
 
     fun getRecipeDetails(recipeId: Int): Flow<ResponseModel<RecipeDetails>>
 }

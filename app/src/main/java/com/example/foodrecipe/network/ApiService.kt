@@ -31,7 +31,8 @@ interface ApiService {
 
     @GET("recipes/complexSearch")
     suspend fun getRecipeByQuery(
-        @Query("query") query: String
+        @Query("query") query: String,
+        @Query("number")number: Int
     ): RecipeResponseByQuery
 
     @GET("recipes/{recipe_id}/information")

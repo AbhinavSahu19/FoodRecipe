@@ -25,5 +25,4 @@ data class RecipeListItemByQuery(
 
     @field:SerializedName("image")
     val image: String = "",
-
     )

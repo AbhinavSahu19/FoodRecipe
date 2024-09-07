@@ -13,7 +13,7 @@ data class RecipeListItemByIngredient(
     val image: String = "",
 
     @field:SerializedName("usedIngredientCount")
-    val usedIngredientCount: String = "",
+    val usedIngredientCount: Int = 0,
 
     @field:SerializedName("missedIngredientCount")
     val missedIngredientCount: Int = 0

@@ -34,7 +34,7 @@ data class RecipeDetails(
     val image: String = "",
 
     @field:SerializedName("nutrition")
-    val nutrition: List<NutritionListItem> = emptyList(),
+    val nutrition: NutritionListItem,
 
     @field:SerializedName("dishTypes")
     val dishTypes: List<String> = emptyList(),
@@ -77,6 +77,7 @@ data class AnalyzedInstructionItem(
     @field:SerializedName("steps")
     val steps: List<StepListItem> = emptyList(),
 )
+
 data class StepListItem(
     @field:SerializedName("number")
     val number: Int = 0,

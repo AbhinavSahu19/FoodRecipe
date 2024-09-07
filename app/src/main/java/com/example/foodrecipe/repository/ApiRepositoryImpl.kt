@@ -56,11 +56,11 @@ class ApiRepositoryImpl @Inject constructor(
         }
     }
 
-    override fun getRecipeByQuery(query: String): Flow<ResponseModel<RecipeResponseByQuery>> = flow{
+    override fun getRecipeByQuery(query: String, number: Int): Flow<ResponseModel<RecipeResponseByQuery>> = flow{
         emit(ResponseModel.Loading)
 
         try{
-            val response = withContext( Dispatchers.IO) { apiService.getRecipeByQuery(query) }
+            val response = withContext( Dispatchers.IO) { apiService.getRecipeByQuery(query, number) }
             emit(ResponseModel.Success(response))
         }
         catch (e: Exception){
